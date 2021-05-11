@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+    <style>
+        body{
+            background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRBVx56bVzxC8KvoTBBA6H5ZeL35w4ql-J8g&usqp=CAU);
+            background-size: 3900px 3900px;
+            background-repeat:no-repeat
+        }
+        .scroll{
+            background-color: rgb(255, 255, 255);
+            border-bottom: 4px solid black;
+            border-left: 4px solid black;
+            border-right: 4px solid black;
+            border-top: 4px solid black;
+           
+        }
+        .scroll h1{
+            color: rgb(255, 0, 0);
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .box{
+           text-align: center;
+           padding-top: 70px;
+           border-top: 4px solid black;
+           border-bottom: 4px solid black; 
+           border-left: 4px solid black;
+           border-right: 4px solid black;
+           font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .box .search{
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+        .box img{
+            width: auto;
+            height: 100px;
+            border-radius:60px;
+            margin:30px 0;
+          
+        }
+        .btn {
+            display: inline-block;
+            background: #ff523b;
+            color: white;
+            padding: 8px 30px;
+            margin: 30px 0;
+            border-radius: 30px;
+            transition:  0.5s;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background: #563434;
+        }
+    </style>
+   
+</head>
+<body>
+    <div class="scroll">
+        <marquee scrollamount="10"><b><h1>Please use lowercase letters. Just for now I only put some commands like:- hello, what is your name ?, hey , by, ok. Because this is only trial version.Thanks..</h1></b>      </marquee>
+    </div>
+    <div class="box">
+        
+    <b><h2>Hello I am chatbot</h2><hr>
+    <h1>Please use lowercase letters</h1><hr>
+    <p>Just for now I only put some commands like:- <br>&#8594; hello, what is your name ?, hey , by, ok. &#8592;<br>Because this is only trial version.Thanks..</p></b><hr>
+    <h2><div class="search">&#8594;  <input type="text" title="Robot" placeholder= "Talk with me here." id="getValue" onkeypress="cSearch()">  &#8592;</div></h2>
+     <hr>
+<a href=""><img src="data:image/jpeg;base64,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"><br></a>
+<a href="" class="btn">Vote for me now </a>
+<a href="index.html" class="btn">Go back to home page. </a>
+</div>
+<script type="text/Javascript">
+    function cSearch() {
+        var get = document.getElementById("getValue").value;
+        if (get == "hello"){
+            alert("Hey!,How are you");
+        }
+        else if (get == "how are you"){
+            alert("I am fine. Thanks for asking :)")
+        }
+        if (get == "hi"){
+            alert("Hey!,How are you");
+        }
+        else if (get == "hey"){
+            alert("I am fine. Thanks for asking ")
+        }
+        if (get == "what is your name ?"){
+            alert("Het's Chatbot");
+        }
+        else if (get == "what is your name?"){
+            alert("Het's  Chatbot")
+        }
+        if (get == "ok"){
+            alert("Thanks. Have a nice day");
+        }
+        else if (get == "by"){
+            alert("Thanks. Have a nice day.")
+        }
+        if (get == "by by"){
+            alert("Ok by have a nice day.")
+        }
+        else if(get == "ok by"){
+            alert("Ok by have a nice day.")
+        }
+        }
+        
+</script>
+
+
+</body>
+</html>
